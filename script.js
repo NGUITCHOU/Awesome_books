@@ -1,182 +1,114 @@
-const mobileMenu = document.getElementById('mobile_menu');
+class Book {
+  constructor(title, author) {
+      this.title = title;
+      this.author = author;
+  }
+}
 
-mobileMenu.addEventListener('click', () => {
-  const desktopMenu = document.getElementById('desktop_menu');
-  desktopMenu.classList.toggle('active');
-  mobileMenu.classList.toggle('active');
+class Library {
+  constructor() {
+      this.books = [];
+  }
+
+  addBook(book) {
+      this.books.push(book);
+  }
+
+  removeBook(index) {
+      this.books.splice(index, 1);
+  }
+
+  getBooks() {
+      return this.books;
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const library = new Library();
+  const bookListSection = document.getElementById("book-list");
+  const addBookSection = document.getElementById("add-book");
+  const contactInfoSection = document.getElementById("contact-info");
+  const booksUl = document.getElementById("books");
+  const submitBtn = document.getElementById("submit-btn");
+  const currentDateSpan = document.getElementById("current-date");
+
+   // Set the current date and time
+   const updateDate = () => {
+    const now = new Date();
+    const options = { 
+        month: 'long', 
+        day: 'numeric', 
+        year: 'numeric', 
+        hour: '2-digit', 
+        minute: '2-digit', 
+        second: '2-digit', 
+        hour12: false 
+    };
+    currentDateSpan.textContent = now.toLocaleString('en-US', options);
+};
+
+  // Navigation to show different sections
+  document.getElementById("list-btn").addEventListener("click", () => {
+      addBookSection.style.display = "none";
+      contactInfoSection.style.display = "none";
+      bookListSection.style.display = "block";
+      updateDate();
+      renderBookList();
+  });
+
+  document.getElementById("add-btn").addEventListener("click", () => {
+      bookListSection.style.display = "none";
+      contactInfoSection.style.display = "none";
+      addBookSection.style.display = "block";
+      updateDate();
+  });
+
+  document.getElementById("contact-btn").addEventListener("click", () => {
+      addBookSection.style.display = "none";
+      bookListSection.style.display = "none";
+      contactInfoSection.style.display = "block";
+      updateDate();
+  });
+
+  // Determine the appropriate suffix for the date
+
+  // Add book functionality
+  submitBtn.addEventListener("click", () => {
+      const title = document.getElementById("book-title").value;
+      const author = document.getElementById("book-author").value;
+
+      if (title && author) {
+          const newBook = new Book(title, author);
+          library.addBook(newBook);
+
+          document.getElementById("book-title").value = '';
+          document.getElementById("book-author").value = '';
+      }
+  });
+
+  // Render the book list
+  function renderBookList() {
+      booksUl.innerHTML = '';
+      library.getBooks().forEach((book, index) => {
+          const li = document.createElement("li");
+          li.textContent = `${book.title} by ${book.author} `;
+
+          // Set background color based on index
+          if (index % 2 === 0) { // Even index (0, 2, 4, ...)
+              li.style.backgroundColor = "#c1c1c1";
+          } else { // Odd index (1, 3, 5, ...)
+              li.style.backgroundColor = "white"; // Change to blue for odd items
+          }
+
+          const removeBtn = document.createElement("button");
+          removeBtn.textContent = "Remove";
+          removeBtn.onclick = () => {
+              library.removeBook(index);
+              renderBookList();
+          };
+          li.appendChild(removeBtn);
+          booksUl.appendChild(li);
+      });
+  }
 });
 
-// create an array of objects to store card information
-
-const projects = [
-  {
-    image: './assets/image/Snapshoot Portfolio (2).svg',
-    title: 'Multi-Post Stories Gain+Glory',
-    technologies: ['Ruby on Rails', 'CSS', 'Javascript', 'HTML'],
-    description: 'An interactive gallery that showcase my project',
-    githublink: 'https://github.com/codegisoft-academy-full-stack-students/codegisoft_linters',
-    liveserver: 'http://127.0.0.1:5501/index.html',
-  },
-  {
-    image: './assets/image/Snapshoot Portfolio (2).svg',
-    title: 'Multi-Post Stories Gain+Glory',
-    technologies: ['Ruby on Rails', 'CSS', 'Javascript', 'HTML'],
-    description: 'An interactive gallery that showcase my project',
-    githublink: 'https://github.com/codegisoft-academy-full-stack-students/codegisoft_linters',
-    liveserver: 'http://127.0.0.1:5501/index.html',
-  },
-  {
-    image: './assets/image/Snapshoot Portfolio (2).svg',
-    title: 'Multi-Post Stories Gain+Glory',
-    technologies: ['Ruby on Rails', 'CSS', 'Javascript', 'HTML'],
-    description: 'An interactive gallery that showcase my project',
-    githublink: 'https://github.com/codegisoft-academy-full-stack-students/codegisoft_linters',
-    liveserver: 'http://127.0.0.1:5501/index.html',
-  },
-  {
-    image: './assets/image/Snapshoot Portfolio (2).svg',
-    title: 'Multi-Post Stories Gain+Glory',
-    technologies: ['Ruby on Rails', 'CSS', 'Javascript', 'HTML'],
-    description: 'An interactive gallery that showcase my project',
-    githublink: 'https://github.com/codegisoft-academy-full-stack-students/codegisoft_linters',
-    liveserver: 'http://127.0.0.1:5501/index.html',
-  },
-  {
-    image: './assets/image/Snapshoot Portfolio (2).svg',
-    title: 'Multi-Post Stories Gain+Glory',
-    technologies: ['Ruby on Rails', 'CSS', 'Javascript', 'HTML'],
-    description: 'An interactive gallery that showcase my project',
-    githublink: 'https://github.com/codegisoft-academy-full-stack-students/codegisoft_linters',
-    liveserver: 'http://127.0.0.1:5501/index.html',
-  },
-  {
-    image: './assets/image/Snapshoot Portfolio (2).svg',
-    title: 'Multi-Post Stories Gain+Glory',
-    technologies: ['Ruby on Rails', 'CSS', 'Javascript', 'HTML'],
-    description: 'An interactive gallery that showcase my project',
-    githublink: 'https://github.com/codegisoft-academy-full-stack-students/codegisoft_linters',
-    liveserver: 'http://127.0.0.1:5501/index.html',
-
-  },
-];
-
-// Function to close the modal
-function closeModal() {
-  const modal = document.getElementById('projectModal');
-  if (modal) {
-    modal.remove();
-  }
-}
-
-// Function to handle clicks outside the modal
-function outsideClick(event) {
-  const modal = document.getElementById('projectModal');
-  if (event.target === modal) {
-    closeModal();
-    window.removeEventListener('click', outsideClick);
-  }
-}
-
-// Function to open the modal with project details
-function openModal(project) {
-  const modal = document.createElement('div');
-  modal.classList.add('modal_style');
-  modal.id = 'projectModal';
-
-  const modalContent = document.createElement('div');
-  modalContent.classList.add('modal_content');
-  modal.appendChild(modalContent);
-
-  const modalImage = document.createElement('img');
-  modalImage.src = project.image;
-  modalImage.alt = project.title;
-  modalContent.appendChild(modalImage);
-
-  const modalTitle = document.createElement('h1');
-  modalTitle.innerHTML = project.title;
-  modalContent.appendChild(modalTitle);
-
-  const modalList = document.createElement('ul');
-  modalList.id = 'modalTechnologies';
-  project.technologies.forEach((element) => {
-    const listItem = document.createElement('li');
-    listItem.innerHTML = element;
-    modalList.appendChild(listItem);
-  });
-  modalContent.appendChild(modalList);
-
-  const modalDescription = document.createElement('p');
-  modalDescription.innerHTML = project.description;
-  modalContent.appendChild(modalDescription);
-
-  const modalLinks = document.createElement('div');
-  modalLinks.classList.add('modal_links');
-
-  const githubLink = document.createElement('a');
-  githubLink.href = project.githubLink;
-  githubLink.target = '_blank';
-  githubLink.textContent = 'GitHub Repo';
-  githubLink.classList.add('button');
-  modalLinks.appendChild(githubLink);
-
-  const liveServer = document.createElement('a');
-  liveServer.href = project.liveServer;
-  liveServer.target = '_blank';
-  liveServer.textContent = 'Live Site';
-  liveServer.classList.add('button');
-  modalLinks.appendChild(liveServer);
-
-  const closeButton = document.createElement('span');
-  closeButton.classList.add('close_btn');
-  closeButton.innerHTML = '&times;';
-  closeButton.addEventListener('click', closeModal);
-  modalContent.appendChild(closeButton);
-
-  modalContent.appendChild(modalLinks);
-  document.body.appendChild(modal);
-
-  window.addEventListener('click', outsideClick);
-}
-
-// Function to create a project card
-function createProjectCard(project) {
-  const card = document.createElement('div');
-  card.classList.add('project_card');
-
-  const cardImage = document.createElement('img');
-  cardImage.src = project.image;
-  cardImage.alt = 'Card Image';
-  card.appendChild(cardImage);
-
-  const cardTitle = document.createElement('h3');
-  cardTitle.innerHTML = project.title;
-  card.appendChild(cardTitle);
-
-  const cardList = document.createElement('ul');
-  project.technologies.forEach((element) => {
-    const listItem = document.createElement('li');
-    listItem.innerHTML = element;
-    cardList.appendChild(listItem);
-  });
-  card.appendChild(cardList);
-
-  const cardBtn = document.createElement('button');
-  cardBtn.type = 'button';
-  cardBtn.innerHTML = 'See Project';
-  card.appendChild(cardBtn);
-  cardBtn.addEventListener('click', () => openModal(project));
-
-  return card;
-}
-
-// Function to insert the project cards into the container
-function insertCards() {
-  const projectsContainer = document.getElementById('projects_cards');
-  projects.forEach((project) => {
-    const projectCard = createProjectCard(project);
-    projectsContainer.appendChild(projectCard);
-  });
-}
-
-// Event listener for DOMContentLoaded
-document.addEventListener('DOMContentLoaded', insertCards);
