@@ -1,0 +1,101 @@
+/* General styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+.content {
+    border: 3px solid black;
+    display: flex;
+    background: white;
+    color: black;
+    padding: 8px;
+    font-size: 20px;
+    gap: 50%;
+}
+
+nav a {
+    margin: 0 15px;
+    color: black;
+    text-decoration: none;
+}
+.date {
+    font-size: 25px;
+    padding: 20px;
+    margin-left: 70%;
+}
+.book_list {
+    text-align: center;
+    padding: 20px;
+}
+.add_book{
+    margin: 10px;
+    text-align: center;
+    margin-top: 50px;
+    display: none;
+}
+.add_book h2{
+    margin: 10px;
+    font-size: 30px;
+}
+.add_book input{
+    border: 3px solid black;
+    border-radius: 5px;
+    width: 60%;
+    padding: 20px;
+    
+}
+input::placeholder{
+    font-size: 25px;
+    font-weight: bolder;
+}
+.mine{
+    margin-top: 50px;
+}
+
+.add_book button {
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 20px;
+    border: 3px solid black;
+    box-shadow: 5px 5px 8px ;
+    margin-left: 48%;
+    width: 80px;
+}
+.contact_section h2{
+    text-align: center;
+    margin: 30px;
+    font-size: 30px;
+}
+.contact_section p{
+    margin-left: 30%;
+    font-size: 25px;
+}
+.book_list h2{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+}
+.book_list ul {
+    border: 3px solid black;
+    font-size: 25px;
+    list-style: none;
+    margin-top: 50px;
+}
+.book_list button{
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 20px;
+    border: 3px solid black;
+    box-shadow: 5px 5px 8px ;
+    margin-left: 60%;
+}
+.footer {
+    border: 3px solid black;
+    padding: 8px;
+    font-size: 25px;
+    bottom: 0;
+    position: fixed;
+    width: 98%;
+}
