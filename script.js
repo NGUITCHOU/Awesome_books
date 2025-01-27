@@ -56,10 +56,6 @@ class LibraryApp {
   }
 
   updateTime() {
-   setInterval(()=>{
-    let d = new Date()
-    this.currentTime.textContent = d.toLocaleString('en-US', options);
-   })
     const options = {
       month: 'long',
       day: 'numeric',
@@ -68,7 +64,10 @@ class LibraryApp {
       minute: '2-digit',
       second: '2-digit',
     };
-    
+    setInterval(() => {
+      const d = new Date();
+      this.currentTime.textContent = d.toLocaleString('en-US', options);
+    });
   }
 
   addBook() {
