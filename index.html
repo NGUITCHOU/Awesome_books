@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome Books</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="content">
+        <h3>Awesome Books</h3>
+        <nav>
+            <a href="#" id="list-btn" data-section="">List |</a>
+            <a href="#" id="add-btn" data-section="">Add New |</a>
+            <a href="#" id="contact-btn" data-section="">Contact</a>
+        </nav>
+    </div>
+    <p class="date" id="current-time">date:</p>
+    </header>
+    <main id="main-content">
+        <div class="book_list" id="book-list">
+            <h2>All Awesome Books</h2>
+            <ul id="books"></ul>
+        </div>
+        <div class="add_book" id="add-book">
+            <h2>Add a New Book</h2>
+            <div class="mine">
+            <input type="text" id="book-title" placeholder="Title"><br><br>
+            <input type="text" id="book-author" placeholder="Author"><br><br>
+            <button type="submit" id="submit-btn">Add</button>
+        </div>
+    </div>
+        <div class="contact_section" id="contact-info">
+            <h2>Contact Information</h2>
+            <p>Do have any question or you just want to say "Hello"?<br>
+             You can reach out to us!</p>
+            <p>. Email: nguitchoumuriellegmail.com</p>
+            <p>. Phone: +237679447262</p>
+            <p>. Our address: Etoug-ebe, yaounde, Cameroon</address></p>
+        </div>
+    </main>
+    <!-- <!-footer section -->
+     <div class="footer">
+        <h4>Copywrite ...</h4>
+     </div>
+    <script src="script.js"></script>
+</body>
+</html> 
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome Books</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav class="nav-bar">
+        <h1>Awesome Books</h1>
+        <ul class="nav-links">
+            <li><a href="#" class="nav-link active" data-section="books">List</a></li>
+            <li><a href="#" class="nav-link" data-section="add-book">Add new</a></li>
+            <li><a href="#" class="nav-link" data-section="contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section id="books" class="section active">
+            <h2>All awesome books</h2>
+            <ul id="books-list"></ul>
+        </section>
+
+        <section id="add-book" class="section">
+            <h2>Add a new book</h2>
+            <form id="book-form" onsubmit="event.preventDefault(); handleAddBook();">
+                <div class="add-book-form">
+                    <input type="text" id="title" placeholder="Book Title">
+                    <input type="text" id="author" placeholder="Author Name">
+                    <button type="submit">Add Book</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Contact information</h2>
+            <div class="contact-info">
+                <p>Do you have any questions or you just want to say "Hello"?</p>
+                <p>You can reach out to us!</p>
+                <ul>
+                    <li>Our e-mail: mail@mail.com</li>
+                    <li>Our phone number: 0043586534422</li>
+                    <li>Our address: Streetname 22, 84503 City, Country</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html> -->
