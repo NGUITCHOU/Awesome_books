@@ -5,7 +5,6 @@ class LibraryApp {
     this.renderBookList();
   }
 
-
   init() {
     this.bookListSection = document.getElementById('book-list');
     this.addBookSection = document.getElementById('add-book');
@@ -112,13 +111,12 @@ document.addEventListener('DOMContentLoaded', () => {
   LibraryApp.initialize(); // Call the static method for initialization
 });
 
-
 // book  collection class
 // class BookCollection{
 // constructor(){
 //   this.book = this.loadbooks();
 //   this.displayBooks();
-//   this.innitializenavigation(); 
+//   this.innitializenavigation();
 // }
 
 // innitializenavigation(){
@@ -175,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //     const BookElement  = document.createElement("li");
 //     BookElement.className = "book-item";
 //     BookElement.innerHTML = `
-    
+
 //     <div>
 //     <span>"${book.title}" by ${book.author}"<span/>
 //     <div/>
@@ -197,12 +195,12 @@ document.addEventListener('DOMContentLoaded', () => {
 //     bookcollection.AddBook(title)
 //     titleinput.value = ""
 //   }
-  
+
 // }
 // }
 
 // class BookCollection {
-//   constructor() { 
+//   constructor() {
 //       this.books = this.loadBooks();
 //       this.displayBooks();
 //       this.initializeNavigation();
@@ -216,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //               navLinks.forEach(l => l.classList.remove('active'));
 //               // Add 'active' class to clicked link
 //               link.classList.add('active');
-              
+
 //               // Get the section id from the data-section attribute
 //               const sectionId = link.dataset.section;
 //               this.switchSection(sectionId);
@@ -265,7 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //       this.books.forEach(book => {
 //           const bookElement = document.createElement('div');
 //           bookElement.className = 'book-item';
-//           bookElement.innerHTML = `   
+//           bookElement.innerHTML = `
 //               <div>
 //                   <span>"${book.title}" by ${book.author}</span>
 //               </div>

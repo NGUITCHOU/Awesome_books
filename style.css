@@ -1,4 +1,5 @@
 /* General styling */
+
 /* * {
   margin: 0;
   padding: 0;
@@ -124,128 +125,131 @@ button.remove-btn {
 .contact-info li {
   margin-bottom: 1rem;
 } */
-/* 
+
+/*
 Describing the madia query for mobile screen */
+
 /* @media (max-width: 768px) { */
-  .content {
-    align-items: center;
-    border: 2px solid black;
-    display: flex;
-    background: white;
-    color: black;
-    font-size: 20px;
-    gap: 12%;
-    height: 55px;
-  }
+.content {
+  align-items: center;
+  border: 2px solid black;
+  display: flex;
+  background: white;
+  color: black;
+  font-size: 20px;
+  gap: 12%;
+  height: 55px;
+}
 
-  nav a {
-    color: black;
-    text-decoration: none;
-  }
+nav a {
+  color: black;
+  text-decoration: none;
+}
 
-  .date {
-    font-size: 20px;
-    padding: 20px;
-    margin-left: 100px;
-  }
+.date {
+  font-size: 20px;
+  padding: 20px;
+  margin-left: 100px;
+}
 
-  .book_list {
-    text-align: center;
-    padding: 20px;
-  }
+.book_list {
+  text-align: center;
+  padding: 20px;
+}
 
-  .add_book {
-    margin: 10px;
-    text-align: center;
-    margin-top: 50px;
-    display: none;
-  }
+.add_book {
+  margin: 10px;
+  text-align: center;
+  margin-top: 50px;
+  display: none;
+}
 
-  .add_book h2 {
-    margin: 10px;
-    font-size: 30px;
-  }
+.add_book h2 {
+  margin: 10px;
+  font-size: 30px;
+}
 
-  .add_book input {
-    border: 3px solid black;
-    border-radius: 5px;
-    width: 60%;
-    padding: 20px;
-  }
+.add_book input {
+  border: 3px solid black;
+  border-radius: 5px;
+  width: 60%;
+  padding: 20px;
+}
 
-  input::placeholder {
-    font-size: 25px;
-    font-weight: bolder;
-  }
+input::placeholder {
+  font-size: 25px;
+  font-weight: bolder;
+}
 
-  .mine {
-    margin-top: 50px;
-  }
+.mine {
+  margin-top: 50px;
+}
 
-  .add_book button {
-    padding: 8px;
-    border-radius: 5px;
-    font-size: 20px;
-    border: 3px solid black;
-    box-shadow: 5px 5px 8px;
-    margin-left: 48%;
-    width: 80px;
-  }
+.add_book button {
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 20px;
+  border: 3px solid black;
+  box-shadow: 5px 5px 8px;
+  margin-left: 48%;
+  width: 80px;
+}
 
-  .contact_section {
-    display: none;
-  }
+.contact_section {
+  display: none;
+}
 
-  .contact_section h2 {
-    text-align: center;
-    margin-top: 50px;
-    font-size: 30px;
-  }
+.contact_section h2 {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 30px;
+}
 
-  .contact_section p {
-    margin-left: 20%;
-    font-size: 25px;
-    margin-top: 10px;
-  }
+.contact_section p {
+  margin-left: 20%;
+  font-size: 25px;
+  margin-top: 10px;
+}
 
-  .book_list h2 {
-    text-align: center;
-    font-size: 30px;
-    margin-top: 20px;
-  }
+.book_list h2 {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 20px;
+}
 
-  .book_list ul {
-    align-items: center;
-    margin-top: 25px;
-    border: 3px solid black;
-    font-size: 25px;
-    list-style: none;
-  }
+.book_list ul {
+  align-items: center;
+  margin-top: 25px;
+  border: 3px solid black;
+  font-size: 25px;
+  list-style: none;
+}
 
-  .book_list ul li a {
-    margin-right: 200px;
-  }
+.book_list ul li a {
+  margin-right: 200px;
+}
 
-  .book_list button {
-    padding: 8px;
-    border-radius: 5px;
-    font-size: 20px;
-    border: 3px solid black;
-    box-shadow: 5px 5px 8px;
-    margin-left: 70%;
-  }
+.book_list button {
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 20px;
+  border: 3px solid black;
+  box-shadow: 5px 5px 8px;
+  margin-left: 70%;
+}
 
-  .footer {
-    border: 3px solid black;
-    padding: 8px;
-    font-size: 25px;
-    bottom: 0;
-    position: fixed;
-    width: 98%;
-  }
-} */
+.footer {
+  border: 3px solid black;
+  padding: 8px;
+  font-size: 25px;
+  bottom: 0;
+  position: fixed;
+  width: 98%;
+}
+
 
 /* Tablet Styling */
+
 /* @media (min-width: 769px) and (max-width: 1024px) {
   .content {
     border: 3px solid black;
@@ -356,8 +360,10 @@ Describing the madia query for mobile screen */
 } */
 
 /* desktop Styling */
+
 /* @media (min-width: 1025px) { */
-  /* .content {
+
+/* .content {
     border: 3px solid black;
     display: flex;
     background: white;
@@ -367,7 +373,7 @@ Describing the madia query for mobile screen */
     gap: 50%;
   } */
 
-  /* nav a {
+/* nav a {
     margin: 0 15px;
     color: black;
     text-decoration: none;
@@ -464,3 +470,4 @@ Describing the madia query for mobile screen */
     width: 98%;
   }
 }
+   */
